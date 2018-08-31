@@ -1,0 +1,28 @@
+.config-list{
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* background-color: antiquewhite; */
+}
+.layout-lsit{
+    margin-left: 8%;
+    margin-right: 10%;
+}
+.text-list{
+    /* float: left; */
+}
+.btn-list{
+    margin-left: 70%;
+    float: left;
+}
+.title-icon{
+    float: left;
+}
+.title-name{
+    float: left;
+    margin-left: 10px;
+    font-size: 18px;
+} 
+.title-layout{
+    margin-bottom: 20px;
+}
