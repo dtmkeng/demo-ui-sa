@@ -1,8 +1,8 @@
 body{
-    background-color:#696969;
+    background-color:hsl(0, 0%, 14%);
 }
 .tootbar{
-    background-color:hsl(0, 0%, 21%)
+    background-color:hsl(171, 100%, 41%)
 }
 .example-icon {
     padding: 0 14px;

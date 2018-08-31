@@ -15,3 +15,15 @@
 .title-detail{
     text-align: center;
 }
+.layout-btn{
+    text-align: center;
+}
+.btn-cancel{
+    margin-left: 20px;
+    background-color: hsl(348, 100%, 61%);
+    font-size: 16px;
+}
+.btn-comfirm{
+     background-color: hsl(141, 71%, 48%);
+     font-size: 16px;
+}
