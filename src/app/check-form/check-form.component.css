@@ -1,0 +1,25 @@
+.config-check-form{
+    margin-top: 3%;
+    margin-left:15%;
+    margin-right: 15%;
+    height: 400px;
+    text-align: center;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  /* width: 100%; */
+  margin-left: 30%;
+  margin-right: 30%;
+
+}
+.form-layout{
+    margin-top: 20%;
+}
+.btn-check{
+    background-color: hsl(204, 86%, 53%);
+    font-size: 16px;
+}
