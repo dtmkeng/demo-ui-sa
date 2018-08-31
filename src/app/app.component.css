@@ -2,5 +2,16 @@ body{
     background-color:#696969;
 }
 .tootbar{
-    background-color:hsl(171, 100%, 41%)
+    background-color:hsl(0, 0%, 21%)
+}
+.example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+.menu-list{
+    float: left;
+    margin-left: 40px;
 }

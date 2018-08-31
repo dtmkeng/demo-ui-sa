@@ -1,0 +1,17 @@
+.config-check-form{
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    /* width: 100%; */
+    margin-right: 20%;
+  }
+.title-detail{
+    text-align: center;
+}
