@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule,MatIconModule,MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardListResverComponent } from './card-list-resver/card-list-resver.component';
@@ -11,6 +11,9 @@ import { DetailFormComponent } from './detail-form/detail-form.component';
 import { PasswordValidComponent } from './password-valid/password-valid.component';
 import { RoutingMainComponent } from './routing-main/routing-main.component';
 import { TextSucessComponent } from './text-sucess/text-sucess.component';
+
+import {ReservationService} from './service/reservation.service'
+import {CancelreservationService} from './service/cancelreservation.service'
 
 // import {CardListResverComponent} from './card-list-resver/card-list-resver.component' 
 @NgModule({
@@ -24,6 +27,7 @@ import { TextSucessComponent } from './text-sucess/text-sucess.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RoutingMainComponent,
     FormsModule,
     MatDialogModule,
@@ -35,7 +39,7 @@ import { TextSucessComponent } from './text-sucess/text-sucess.component';
     MatListModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [ReservationService,CancelreservationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

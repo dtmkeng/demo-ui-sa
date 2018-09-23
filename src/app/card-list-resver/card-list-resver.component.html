@@ -4,29 +4,11 @@
     <div class="title-icon"><mat-icon>list</mat-icon></div>
     <div class="title-name"><b>รายการจอง</b></div>
 </div>
-  <mat-list role="list">
+  <mat-list role="list"  *ngFor="let reservations of reservation">
     <div class="layout-lsit">
       <mat-list-item role="listitem">
-            <p class="title-name">จองช่างภาพถ่ายงานเเต่ง เต็มวัน</p>
-            <a   routerLink="/check" mat-raised-button class="btn-list">ยกเลิก</a>
-      </mat-list-item>
-    </div>
-    <div class="layout-lsit">
-      <mat-list-item role="listitem">
-            <p class="title-name">จองช่างภาพถ่ายบวช สองวัน</p>
-            <a   routerLink="/check" mat-raised-button class="btn-list">ยกเลิก</a>
-      </mat-list-item>
-    </div>
-    <div class="layout-lsit">
-      <mat-list-item role="listitem">
-            <p class="title-name">จองสตูดิโอถ่ายภาพ เเละจองช่างภาพ</p>
-            <a   routerLink="/check" mat-raised-button class="btn-list">ยกเลิก</a>
-      </mat-list-item>
-    </div>
-    <div class="layout-lsit">
-      <mat-list-item role="listitem">
-            <p class="title-name">จองช่างภาพถ่ายงานรับปริญญา มทส</p>
-            <a   routerLink="/check" mat-raised-button class="btn-list">ยกเลิก</a>
+            <p class="title-name">{{reservations.detail}}</p>
+            <a   (click)="OnSelect(reservations.reserId)" mat-raised-button class="btn-list">ยกเลิก</a>
       </mat-list-item>
     </div>
     </mat-list>

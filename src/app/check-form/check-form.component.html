@@ -4,14 +4,16 @@
     <h1>ตรวจสอบการยกเลิก</h1> 
     <div class="example-container">
       <mat-form-field>
-        <input matInput placeholder="เลขใบจอง">
+        <input matInput placeholder="เลขใบจอง"  [(ngModel)]="check.reserid"
+        required name="reserid" #reserid>
       </mat-form-field>
     
       <mat-form-field>
-        <input matInput placeholder="ชื่อผู้จอง"/>
+        <input matInput placeholder="เลขผู้จอง" [(ngModel)]="check.memid"
+        required name="memid" #memid />
       </mat-form-field>
         <div>
-          <a   routerLink="/detail" mat-raised-button  class="btn-check"><b>ตรวจสอบ</b></a>
+          <a    mat-raised-button  class="btn-check" (click)="onClickMe()"><b>ตรวจสอบ</b></a>
         </div>
     </div>
   </mat-card>

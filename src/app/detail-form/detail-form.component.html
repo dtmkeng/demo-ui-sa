@@ -1,20 +1,21 @@
 <div>
     <mat-card class="config-check-form">
       <h2 class="title-detail">รายละเอียดการจอง</h2>
-        <p>เลขที่ใบจอง: </p> 
-        <p>ชื่อการจอง: </p>  
+        <p>เลขที่ใบจอง: &nbsp;{{reser.reserId}}</p> 
+        <p>ชื่อการจอง: {{reser.detail}} </p>  
         <p>สถาถที่: </p>
-        <p>เวลา:</p>
+        <p>เวลา: {{reser.time}}</p>
         <p>ชื่อผู้จอง</p>
-        <p>เวลาจอง:</p>
+        <p>เวลาจอง: {{reser.time}}</p>
         <div class="example-container">
             <mat-form-field>
-              <textarea matInput placeholder="เหตุผลการยกเลิก"></textarea>
+              <textarea matInput placeholder="เหตุผลการยกเลิก" [(ngModel)]="detail.comment"
+              required name="comment" #comment></textarea>
             </mat-form-field>
         </div>
         <div class="layout-btn">
-            <a routerLink="/check-valid" mat-raised-button  class="btn-comfirm"><b>ยินยัน</b></a>
-            <button mat-raised-button  class="btn-cancel"><b>ยกเลิก</b></button>
+            <a (click)="SumbitCancel()" mat-raised-button  class="btn-comfirm"><b>ยินยัน</b></a>
+            <button mat-raised-button  class="btn-cancel" routerLink="/"><b>ยกเลิก</b></button>
           </div>
     </mat-card>
     </div> 
