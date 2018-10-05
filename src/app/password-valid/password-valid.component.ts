@@ -20,23 +20,27 @@ export class PasswordValidComponent implements OnInit {
   }
   SubmitLast(){
     this.reservaton.getReservationByReserId(this.checkdata.reserid).subscribe(data=>{
-       console.log(data)
+      //  console.log(data)
        this.reservaton.getMemberById(data.memberId).subscribe(mem=>{
-         console.log(mem)
+        //  console.log(mem)
           this.reservaton.checkpassword(mem.username,this.password.pass).subscribe(check=>{
-            console.log(check)
-            if(check != null ){
+            // console.log(check)
+            if(check.status == "found" ){
                 this.cancelreser.submitCancel(this.checkdata.reserid,this.checkdata.comment).subscribe(data=>{
-                  console.log(data)
-                  if(data!=null){
+                  // console.log(data)
+                  if(data.status == "save"){
                       this.router.navigate(['sucess',{reserid:this.checkdata.reserid}])
+                  }else{
+                      console.log("error save cancelReservation")
                   }
                 })
+            }else{
+                    console.log("not found member accout")
             }
           })
        })
     })
-    console.log(this.password)
+    // console.log(this.password)
 
   }
 }
