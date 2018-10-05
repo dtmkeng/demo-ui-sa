@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {CancelreservationService} from '../service/cancelreservation.service'
 import {Router} from "@angular/router";
+// export interface Food {
+//   value: string;
+//   viewValue: string;
+// }
 @Component({
   selector: 'app-check-form',
   templateUrl: './check-form.component.html',
@@ -15,8 +19,15 @@ export class CheckFormComponent implements OnInit {
     this.route.params.subscribe(param=>{
       console.log(param['data'])
     })
+    
    
+    
   }
+  // foods: Food[] = [
+  //   {value: 'steak-0', viewValue: 'Steak'},
+  //   {value: 'pizza-1', viewValue: 'Pizza'},
+  //   {value: 'tacos-2', viewValue: 'Tacos'}
+  // ];
   onClickMe(){
     this.cacelreser.findMapReser(this.check.reserid,this.check.memid).subscribe(data=>{
       console.log(data)
@@ -26,4 +37,7 @@ export class CheckFormComponent implements OnInit {
     })
       console.log(this.check)
   }
+  // doSomething(value:any){
+  //   console.log(value.value)
+  // }
 }

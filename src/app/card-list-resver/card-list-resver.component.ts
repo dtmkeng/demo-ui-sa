@@ -13,7 +13,7 @@ export class CardListResverComponent implements OnInit {
   ngOnInit() {
     this.reser.getAllReservation().subscribe(data=>{
       this.reservation = data
-      // console.log(data)
+      console.log(data)
     })
   }
   OnSelect(data:any){
