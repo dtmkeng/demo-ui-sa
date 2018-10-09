@@ -12,11 +12,26 @@ import { PasswordValidComponent } from './password-valid/password-valid.componen
 import { RoutingMainComponent } from './routing-main/routing-main.component';
 import { TextSucessComponent } from './text-sucess/text-sucess.component';
 
-
+import { AppserviceService} from './service/appservice.service'
 import {ReservationService} from './service/reservation.service'
 import {CancelreservationService} from './service/cancelreservation.service'
 import {MatTableModule} from '@angular/material/table';
-// import {CardListResverComponent} from './card-list-resver/card-list-resver.component' 
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+// import {CardListResverComponent} from './card-list-resver/card-list-resver.component'
+import { HttpHandler ,HttpInterceptor,HttpRequest,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+@Injectable()
+export class XhrInterceptor implements HttpInterceptor {
+
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    const xhr = req.clone({
+      headers: req.headers.set('X-Requested-With', 'XMLHttpRequest')
+    });
+    return next.handle(xhr);
+  }
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +39,9 @@ import {MatTableModule} from '@angular/material/table';
     CheckFormComponent,
     DetailFormComponent,
     PasswordValidComponent,
-    TextSucessComponent
+    TextSucessComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +59,7 @@ import {MatTableModule} from '@angular/material/table';
     MatToolbarModule,
     MatTableModule
   ],
-  providers: [ReservationService,CancelreservationService],
+  providers: [ReservationService,CancelreservationService,AppserviceService,{ provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

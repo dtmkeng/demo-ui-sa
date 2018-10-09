@@ -1,0 +1,23 @@
+.layout-login{
+   /* margin: 10%,30%,30%,30%; */
+   margin-top: 5%;
+   margin-left: 30%;
+   margin-right: 30%;
+   text-align: center;
+}
+.example-container {
+    margin-left: 30%;
+    margin-right: 30%;
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 10%; */
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  .login-btn{
+      margin-bottom: 50%;
+      width: 40%;
+      background-color: hsl(204, 86%, 53%);
+  }
