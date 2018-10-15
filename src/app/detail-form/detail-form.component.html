@@ -1,11 +1,12 @@
+<!--  -->
 <div>
     <mat-card class="config-check-form">
       <h2 class="title-detail">รายละเอียดการจอง</h2>
         <p>เลขที่ใบจอง: &nbsp;{{reser.reserId}}</p> 
         <p>ชื่อการจอง: {{reser.detail}} </p>  
-        <p>เวลา: {{reser.time}}</p>
-        <p>ชื่อผู้จอง: {{reser.membername}}</p>
-        <p>เวลาจอง: {{reser.time}}</p>
+        <p>ระยะเวลา: {{reser.time}}</p>
+        <p>ชื่อผู้จอง: {{reser.name}}</p>
+        <p>วันที่: {{reser.date | date:'yyyy-MM-dd'}}</p>
         <div class="example-container">
             <mat-form-field>
               <textarea matInput placeholder="เหตุผลการยกเลิก" [(ngModel)]="detail.comment"

@@ -1,8 +1,11 @@
 body{
     background-color:hsl(0, 0%, 14%);
+    
 }
 .tootbar{
-    background-color:hsl(171, 100%, 41%)
+    background-color:hsl(171, 100%, 41%);
+    
+    /* opacity: 0.3; */
 }
 .example-icon {
     padding: 0 14px;
@@ -13,5 +16,7 @@ body{
   }
 .menu-list{
     float: left;
+    font-size: 20px;
     margin-left: 40px;
+    font-weight: bold;
 }

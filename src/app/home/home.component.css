@@ -1,0 +1,11 @@
+.home-page{
+    background-image: url('../img/welcome.jpg');
+    height: 760px;
+}
+.welcome{
+    padding-top: 15%;
+    text-align: center;
+    font-size: 500%;
+    font-weight: bold;
+    /* opacity: 0.5; */
+}

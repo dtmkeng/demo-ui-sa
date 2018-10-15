@@ -8,8 +8,10 @@ import { PasswordValidComponent } from '../password-valid/password-valid.compone
 import { TextSucessComponent } from '../text-sucess/text-sucess.component';
 import { LoginComponent } from '../login/login.component';
 import { SignupComponent } from '../signup/signup.component';
+import {HomeComponent} from '../home/home.component'
 const routes: Routes = [
-  { path: '', component: CardListResverComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'reserlist', component: CardListResverComponent },
   { path:'check',component:CheckFormComponent},
   { path:'detail',component:DetailFormComponent},
   { path:'check-valid',component:PasswordValidComponent},

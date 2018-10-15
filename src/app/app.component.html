@@ -1,19 +1,19 @@
 <mat-toolbar class="tootbar">
     <mat-toolbar-row>
       <a class="menu-list">G16 Studio</a>
-      <a class="menu-list">จองสตูดิโอ / ช่างภาพ</a>
-      <a class="menu-list">ยกเลิกการจอง</a>
-      <a class="menu-list">จ่ายเงิน</a>
-      <a class="menu-list">รับ/ส่งรุปภาพ</a>
-      <a class="menu-list">ยืมคืน</a>
+      <button mat-button  class="menu-list">จองสตูดิโอ / ช่างภาพ</button>
+      <button mat-button class="menu-list" routerLink="/reserlist">ยกเลิกการจอง</button>
+      <button mat-button class="menu-list">จ่ายเงิน</button>
+      <button mat-button class="menu-list">รับ/ส่งรุปภาพ</button>
+      <button mat-button class="menu-list">ยืมคืน</button>
       
       <span class="example-spacer"></span>
-      <p class="example-icon">Login</p>
-      <p class="example-icon">Resigter</p>
+      <button  *ngIf="!authed()" class="example-icon"  routerLink='/login' mat-button>Login</button>
+      <!-- <button  *ngIf="!authed()" class="example-icon" mat-button>Resigter</button> -->
+      <p  *ngIf="authed()" class="example-icon">Welcome : {{names()}}</p>
+      <button  *ngIf="authed()" class="example-icon" mat-button (click)="logOut()"><b>log Out</b></button>
+
+
     </mat-toolbar-row>
   </mat-toolbar>
   <router-outlet></router-outlet>
-   <!-- <app-card-list-resver></app-card-list-resver> -->
-   <!-- <ap`p-check-form></app-check-form> -->
-   <!-- <app-detail-form></app-detail-form> -->
-   <!-- <app-password-valid></app-password-valid> -->

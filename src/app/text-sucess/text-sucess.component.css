@@ -5,6 +5,9 @@
     height: 200px;
     
  }
+ .layout-text-ss{
+     height: auto;
+ }
  .password-tltle{
      /* margin-top: 5%; */
      text-align: center;
@@ -24,12 +27,18 @@
      background-color: hsl(141, 71%, 48%);
  }
  .config-password-valid{
-    margin-top: 3%; margin-left: 20%; margin-right: 20%; height: 200px;
+    margin-top: 3%; margin-left: 20%; margin-right: 20%; height: auto;
     }
     .password-tltle{
-    text-align: center;
+    /* text-align: center; */
+    text-align: left;
     font-size: 20px;
     }
+    .password-tltle-1{
+        text-align: center;
+        /* text-align: left; */
+        font-size: 20px;
+        }
     .example-container {
     display: flex;
     flex-direction: column;

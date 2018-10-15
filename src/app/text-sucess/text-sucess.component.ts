@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import { ReservationService} from '../service/reservation.service'
 @Component({
   selector: 'app-text-sucess',
   templateUrl: './text-sucess.component.html',
@@ -7,12 +8,17 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class TextSucessComponent implements OnInit {
   reser:any={}
-  constructor(private route :ActivatedRoute) { }
+  constructor(private route :ActivatedRoute,private reservatio : ReservationService) { }
 
   ngOnInit() {
     this.route.params.subscribe(data=>{
       console.log(data)
-        this.reser.reserid = data.reserid
+         this.reservatio.getReservationByReserId(data.reserid).subscribe(reser =>{
+             this.reser = reser;
+             this.reser.membername = reser.memberId.name
+             console.log(reser)
+         })
+       
     })
   }
 

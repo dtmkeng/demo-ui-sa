@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { ReturnStatement } from '@angular/compiler';
+
 @Injectable()
 export class CancelreservationService {
   public API = '//localhost:8080';
@@ -11,10 +11,11 @@ export class CancelreservationService {
 
   }
   // /cancel-insert/{id}/comment/{commemt}
-  findMapReser(reserId:String,memId:String): Observable<any>{
-     console.log(memId,reserId)
-     return  this.http.post(this.MAP+'/'+reserId+'/'+memId,{});
+  findMapReser(reserId:String,memname:String): Observable<any>{
+     console.log(memname,reserId)
+     return  this.http.post(this.MAP+'/'+reserId+'/'+memname,{});
   }
+  
   submitCancel(reserId:String,comment:String): Observable<any>{
      return this.http.post(this.SUBMIT+reserId+'/comment/'+comment,{});
   }

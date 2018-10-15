@@ -21,10 +21,7 @@ export class DetailFormComponent implements OnInit {
       this.reservations.getReservationByReserId(param.data).subscribe(data =>{
             console.log(data)
             this.reser = data
-            this.reservations.getMemberById(data.memberId).subscribe(mem=>{
-              console.log(mem)
-               this.reser.membername = mem.name
-            })
+            this.reser.name = data.memberId.name
       })
     })
   }

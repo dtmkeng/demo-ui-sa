@@ -3,7 +3,17 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatButtonModule, MatCardModule, MatInputModule, MatListModule, MatToolbarModule,MatIconModule,MatDialogModule,MatSelectModule} from '@angular/material';
+import { MatButtonModule,
+         MatCardModule, 
+         MatInputModule, 
+         MatListModule, 
+         MatToolbarModule,
+         MatIconModule,
+         MatDialogModule,
+         MatSelectModule,
+         MatNativeDateModule 
+
+} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardListResverComponent } from './card-list-resver/card-list-resver.component';
 import { CheckFormComponent } from './check-form/check-form.component';
@@ -18,9 +28,14 @@ import {CancelreservationService} from './service/cancelreservation.service'
 import {MatTableModule} from '@angular/material/table';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import {MatDatepickerModule } from '@angular/material/datepicker';
 // import {CardListResverComponent} from './card-list-resver/card-list-resver.component'
 import { HttpHandler ,HttpInterceptor,HttpRequest,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { TextDialogComponent } from './text-dialog/text-dialog.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { HomeComponent } from './home/home.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 
@@ -41,7 +56,9 @@ export class XhrInterceptor implements HttpInterceptor {
     PasswordValidComponent,
     TextSucessComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    TextDialogComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +66,8 @@ export class XhrInterceptor implements HttpInterceptor {
     RoutingMainComponent,
     FormsModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     MatIconModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -57,9 +76,12 @@ export class XhrInterceptor implements HttpInterceptor {
     MatListModule,
     MatSelectModule,
     MatToolbarModule,
-    MatTableModule
+    MatTableModule,
+    MatTabsModule,
+    MatButtonToggleModule
   ],
-  providers: [ReservationService,CancelreservationService,AppserviceService,{ provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true }],
+  entryComponents: [TextDialogComponent],
+  providers: [ReservationService,CancelreservationService,MatDialogModule,AppserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

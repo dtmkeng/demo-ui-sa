@@ -6,6 +6,8 @@ import {Router} from "@angular/router";
 //   value: string;
 //   viewValue: string;
 // }
+import {TextDialogComponent} from '../text-dialog/text-dialog.component'
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-check-form',
   templateUrl: './check-form.component.html',
@@ -13,7 +15,10 @@ import {Router} from "@angular/router";
 })
 export class CheckFormComponent implements OnInit {
   check: any = {};
-  constructor(private route:ActivatedRoute,private cacelreser:CancelreservationService,private router: Router) { }
+  animal: string;
+  name: string;
+
+  constructor(private route:ActivatedRoute,private cacelreser:CancelreservationService,private router: Router,public dialog: MatDialog) { }
   reserId : String
   ngOnInit() {
     this.route.params.subscribe(param=>{
@@ -23,21 +28,27 @@ export class CheckFormComponent implements OnInit {
    
     
   }
-  // foods: Food[] = [
-  //   {value: 'steak-0', viewValue: 'Steak'},
-  //   {value: 'pizza-1', viewValue: 'Pizza'},
-  //   {value: 'tacos-2', viewValue: 'Tacos'}
-  // ];
   onClickMe(){
-    this.cacelreser.findMapReser(this.check.reserid,this.check.memid).subscribe(data=>{
+    this.cacelreser.findMapReser(this.check.reserid,this.check.memname).subscribe(data=>{
       console.log(data)
-      if(data != null){
+      if(data){
         this.router.navigate(['detail',{data:data.reserId}])
+      }else{
+        const dialogRef = this.dialog.open(TextDialogComponent, {
+          width: '300px',
+      
+          data: {name: 'ข้อมูลผิดพลาด'}
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+          this.animal = result;
+        });
       }
     })
       console.log(this.check)
   }
-  // doSomething(value:any){
-  //   console.log(value.value)
-  // }
+ 
+
+
 }

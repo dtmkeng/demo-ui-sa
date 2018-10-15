@@ -29,3 +29,6 @@
 .title-layout{
     margin-bottom: 20px;
 }
+.btn-login{
+    background-color: hsl(204, 86%, 53%)	;
+}

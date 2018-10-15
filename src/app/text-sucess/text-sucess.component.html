@@ -1,9 +1,14 @@
-<div>
-  <mat-card class="config-password-valid">
+<div class="layout-text-ss">
+  <mat-card class="config-password-valid" >
   <br/>
   <div class="check-icon"><i class="far fa-check-circle fa-5x"></i></div>
-  <p class="password-tltle"><b>ทำการยกเลิกสำเร็จ</b></p>
-  <p class="password-tltle"><b>ยกเลิกรายการ : การจองที่ 1 เลขใบจอง {{reser.reserid}}</b></p>
+  <p class="password-tltle-1"><b>ทำการยกเลิกสำเร็จ</b></p>
+  <p class="password-tltle"><b>ยกเลิกรายการ เลขที่: {{reser.reserId}}</b></p>
+  <p class="password-tltle"><b>ชื่อผู้จอง: {{reser.membername}}</b></p>
+  <p class="password-tltle"><b>วันที่:  {{reser.date | date:'yyyy-MM-dd'}}</b></p>
+  <p class="password-tltle"><b>ระยะเวลา: {{reser.time}}</b></p>
+  <p class="password-tltle"><b>การจอง: {{reser.detail}}</b></p>
+  <p class="password-tltle"><b>ราคา: {{(reser.price) ? reser.price : 0 }} &nbsp; บาท</b></p>
   <div class="example-container">
   </div>
   </mat-card>

@@ -1,5 +1,5 @@
 <div>
-<mat-card class="config-list">
+<mat-card class="config-list" *ngIf="auth()">
 <div class="title-layout">
     <div class="title-icon"><mat-icon>list</mat-icon></div>
     <div class="title-name"><b>รายการจอง</b></div>
@@ -12,5 +12,14 @@
       </mat-list-item>
     </div>
     </mat-list>
+    <!-- <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+</mat-card>
+<mat-card class="config-list" *ngIf="!auth()">
+    <h1>Login ก่อนทำรายการ</h1>
+    <button mat-button class="btn-login"  routerLink="/login">Login</button> 
 </mat-card>
 </div>
