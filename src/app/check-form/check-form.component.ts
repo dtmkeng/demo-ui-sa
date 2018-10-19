@@ -32,7 +32,7 @@ export class CheckFormComponent implements OnInit {
     this.cacelreser.findMapReser(this.check.reserid,this.check.memname).subscribe(data=>{
       console.log(data)
       if(data){
-        this.router.navigate(['detail',{data:data.reserId}])
+        this.router.navigate(['detail',{data:data.reservationId}])
       }else{
         const dialogRef = this.dialog.open(TextDialogComponent, {
           width: '300px',

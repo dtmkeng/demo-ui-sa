@@ -9,29 +9,30 @@ import {ActivatedRoute,Router} from "@angular/router";
 export class AppComponent implements OnInit {
   check : boolean 
   user :any;
-  name : any ;
+  name : any ="keng" ;
   
   constructor(public app : AppserviceService,private route:ActivatedRoute,private router: Router){
- 
   }
   
-  title = 'app';
   ngOnInit(){
     console.log(this.app)
-    if(!this.authed()){
+    if(localStorage.getItem('user')==null){
       this.router.navigate(['home'])
+    }else{
+      this.app.authenticated = true;
     }
-    
   }
   authed(){
     return this.app.authenticated
-  }
-  names(){
-    return this.app.name
   }
   logOut(){
     console.log("logout")
     this.app.authenticated = false
     this.router.navigate(['home'])
+    localStorage.removeItem('user')
+  }
+  names(){
+   
+    return   JSON.parse(localStorage.getItem('user')).name
   }
 }

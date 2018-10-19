@@ -22,6 +22,7 @@ export class DetailFormComponent implements OnInit {
             console.log(data)
             this.reser = data
             this.reser.name = data.memberId.name
+            this.reser.time = data.time.time
       })
     })
   }
@@ -29,10 +30,14 @@ export class DetailFormComponent implements OnInit {
     if(this.detail.comment != ""){
       console.log(this.detail)
       const commet = this.detail.comment
-      this.router.navigate(['check-valid',{comment:commet,reserid:this.reser.reserId}])
-      
+      this.router.navigate(['check-valid',{comment:commet,reserid:this.reser.reservationId}]) 
     }
-
   }
-
+  setUser(){
+          const user = {
+            username : "keng",
+            password:"1234"
+          }
+          this.reservations.setUser(user)
+  }
 }

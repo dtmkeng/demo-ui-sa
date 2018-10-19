@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
-    // console.log(this.app.authenticated)
+   
   }
   LoginSubmit(){
        this.app.authenticate(this.credentials,()=>{
@@ -32,11 +32,8 @@ export class LoginComponent implements OnInit {
       
           dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed');
-            // this.animal = result;
           });
          }
-        //  console.log(this.app.authenticated)
-        // this.router.navigate(['home']);
        })
       
   }

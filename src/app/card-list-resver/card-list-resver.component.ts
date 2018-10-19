@@ -13,27 +13,21 @@ export class CardListResverComponent implements OnInit {
   user :any ;
   ngOnInit() {
     this.user = this.app.getUser()
-    // console.log(this.user)
-    if(this.user){
+    console.log(this.user)
+    if(localStorage.getItem('user')!=null){
+      this.user =   JSON.parse(localStorage.getItem('user'))  
     this.reser.getReservatioMember(this.user.memberId).subscribe(datare=>{
       // this.reservation = data
+      console.log(datare)
+
       for( let datas of datare){
-        this.reser.CheckReser(datas.reserId).subscribe(data=>{
+        this.reser.CheckReser(datas.reservationId).subscribe(data=>{
           if(data==null){
-              this.reservation.push(datas)
-          }
-        })
-  
-      
-      }
-      
-    })
-  }
-  // }
-    // console.log(this.app.getUser())
+               console.log(datas)
+               datas.detail = 'reservation :'+ datas.photographer.detail+'  ' +datas.studio.name               
+              this.reservation.push(datas)}})}})}
   }
   OnSelect(data:any){
-    //  console.log(data)
      this.router.navigate(['check',{data:data}])
   }
   auth(){

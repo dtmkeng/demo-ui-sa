@@ -8,15 +8,10 @@
     <div class="layout-lsit">
       <mat-list-item role="listitem">
             <p class="title-name">{{reservations.detail}}</p>
-            <a   (click)="OnSelect(reservations.reserId)" mat-raised-button class="btn-list">ยกเลิก</a>
+            <a   (click)="OnSelect(reservations.reservationId)" mat-raised-button class="btn-list">ยกเลิก</a>
       </mat-list-item>
     </div>
     </mat-list>
-    <!-- <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field> -->
 </mat-card>
 <mat-card class="config-list" *ngIf="!auth()">
     <h1>Login ก่อนทำรายการ</h1>
