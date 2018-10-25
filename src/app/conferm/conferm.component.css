@@ -1,0 +1,31 @@
+.tootbar{
+    background-color:hsl(120, 62%, 52%)
+}
+
+.example-icon {
+    padding: 0 14px;
+  }
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.menu-list{
+    float: left;
+    margin-left: 40px;
+}
+.loginbox{
+   margin-left:40%;
+   margin-right: 20%;
+}
+.layout{
+    border: 2px solid black;
+    height: 720px;
+    background-image: url('../submit/kot.jpg')
+}
+.master{
+    height: 720px;
+    background-image: url('../conferm/kot.jpg')
+}
+table {
+    width: 80%;
+    
+  }

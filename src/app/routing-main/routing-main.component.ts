@@ -16,6 +16,9 @@ import { HistoryComponent } from '../history/history.component';
 import {MainreservationComponent} from '../mainreservation/mainreservation.component'
 import {ReservationhistoryComponent} from '../reservationhistory/reservationhistory.component'
 import {ReservationComponent} from '../reservation/reservation.component'
+
+import {SubmitComponent}from '../submit/submit.component'
+import {ConfermComponent} from '../conferm/conferm.component'
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'reserlist', component: CardListResverComponent },
@@ -29,7 +32,9 @@ const routes: Routes = [
   { path:'book/history',component:HistoryComponent},
   { path:'mainreservation',component:MainreservationComponent},
   { path:'reservation/history',component:ReservationhistoryComponent},
-  { path:'reservation',component:ReservationComponent}
+  { path:'reservation',component:ReservationComponent},
+  { path:'send',component:SubmitComponent},
+  { path:'conferm',component:ConfermComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],
