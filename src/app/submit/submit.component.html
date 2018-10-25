@@ -1,0 +1,73 @@
+
+
+<div class="layout">
+  
+    <div class="loginbox">
+       <br/>
+      <h1>ระบบรับส่งรูปภาพ</h1>
+  
+      <div class="example-form">
+
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Reservation ID"  [(ngModel)]="datasend.reservationId" >
+            </mat-form-field>
+        <br/>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name"  [(ngModel)]="datasend.name">
+        </mat-form-field>
+
+        <br/>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Address"  [(ngModel)]="datasend.address">
+        </mat-form-field>
+        
+        <br/>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email"  [(ngModel)]="datasend.email">
+        </mat-form-field>
+
+      </div>
+
+
+      <mat-form-field>
+        <mat-select placeholder="Type Delivery" [(ngModel)]="datasend.typeDeliveryId" name = "typeDelivery">
+          <mat-option  *ngFor="let typeDeliverys of typeDelivery" [value]="typeDeliverys.typeDaliveryId"  >
+            {{typeDeliverys.typeDalivery}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      
+    <br/>
+
+    <mat-form-field>
+        <mat-select placeholder="Type Photo" [(ngModel)]="datasend.typePhotoId" name = "typePhoto">
+          <mat-option  *ngFor="let typePhotos of typePhoto" [value]="typePhotos.typePhotoId" >
+            {{typePhotos.typePhoto}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <br/>
+
+      <mat-form-field>
+          <mat-select placeholder="Type Size" [(ngModel)]="datasend.typeSizeId" name = "typeSize">
+            <mat-option *ngFor="let typeSizes of typeSize" [value]="typeSizes.typeSizeId" >
+              {{typeSizes.typeSize}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      <div class="bot">
+      <button mat-button style="background-color:hsl(134, 89%, 56%);"  font color="green"(click)="OnSubmit()" >บันทึก</button>
+      </div>
+      <br/>
+      <div class="bot2">
+      <button mat-button style="background-color:hsl(271, 88%, 77%);" (click)="show()" >รายการรับส่งรูปภาพ</button>
+      </div>
+
+    </div>
+  
+  
+  </div>
