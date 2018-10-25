@@ -21,3 +21,10 @@
       width: 40%;
       background-color: hsl(204, 86%, 53%);
   }
+  .tabs{
+    background: url('../img/311245.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+    margin: 0;
+  }

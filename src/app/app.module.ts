@@ -38,6 +38,7 @@ import { HomeComponent } from './home/home.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { BookComponent } from './book/book.component';
 import { HistoryComponent } from './history/history.component';
+// import {MatTabsModule} from '@angular/material/tabs';
 import { BookingequipmentService } from './bookingequipment-service/bookingequipment.service';
 import { MainreservationComponent } from './mainreservation/mainreservation.component';
 import { ReservationserviceService } from './service/reservationservice.service'
@@ -52,6 +53,10 @@ import {PaymentComponent} from './payment/payment.component'
 import {BillComponent} from './bill/bill.component'
 import {BillService} from './service/bill.service'
 import { from } from 'rxjs';
+import { DetailComponent } from './detail/detail.component';
+import { SchuduleComponent } from './schudule/schudule.component';
+import {NewService} from './service/new.service'
+import {AppService} from './service/app.service'
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 
@@ -83,7 +88,9 @@ export class XhrInterceptor implements HttpInterceptor {
     SubmitComponent,
     ConfermComponent,
     PaymentComponent,
-    BillComponent
+    BillComponent,
+    DetailComponent,
+    SchuduleComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +120,9 @@ export class XhrInterceptor implements HttpInterceptor {
               BookingequipmentService,
               ReservationserviceService,
               SendPhotoServiceService,
-              BillService
+              BillService,
+              AppService,
+              NewService
             ],
   bootstrap: [AppComponent]
 })
