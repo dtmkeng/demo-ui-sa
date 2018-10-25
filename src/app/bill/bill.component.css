@@ -1,0 +1,30 @@
+.title-name{
+    padding-top: 4%;
+    text-align : center;
+    color: #FFFFFF;
+    font-size: 40px;
+    font-weight: bold;
+}
+.mat-sort-header-container {
+    padding-left: 5%;
+align-items: center;
+font-size: 60px;
+color:#0000;
+ /* margin-left: 5%; */
+}
+.head{
+    /* margin-left: 5%; */
+   font-size: 20px;
+   color: rgb(121, 136, 177);
+   font-weight: 300;
+}
+table{
+    width: 100%;
+}
+.bill-bg{
+    background: url('../img/ww.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+    margin: 0;
+}

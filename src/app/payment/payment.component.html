@@ -1,0 +1,48 @@
+<div class="bill-bg">
+<div class = " databox ">
+  <div class="example-container">
+    <h2 class="title-name">" ระบบจ่ายเงิน "</h2>
+    <mat-form-field>
+      <input matInput placeholder="ชื่อ นามสกุล" [(ngModel)]="data.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="เบอร์โทรศัพท์" [(ngModel)]="data.phonenumber">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="รายการชำระ" [(ngModel)]="data.typeId" name = "type"   (selectionChange)="someMethod($event.value)">
+        <mat-option *ngFor="let typeBills of typeBill" [value]="typeBills.typeId">
+          {{typeBills.type}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="!type">
+      <mat-select placeholder="รายการจอง"[(ngModel)]="data.reserId">
+        <mat-option *ngFor="let resers of Reser" [value]="resers.reservationId">
+          {{resers.reservationId}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="type" >
+      <mat-select placeholder="รายการเช่า"[(ngModel)]="data.bookingequId">
+        <mat-option *ngFor="let books of Book" [value]="books.bookingId">
+          {{books.bookingId}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-date">
+      <input matInput [matDatepicker]="picker" placeholder="วัน เดือน ปี (ที่ชำระ)"[(ngModel)]="data.date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker color="primary"></mat-datepicker>
+    </mat-form-field>
+
+
+    <br>
+    <br>
+    <button mat-button  routerLinkActive='active' (click)="save()">บันทึก</button>
+    <button mat-button routerLink='/bill' routerLinkActive='active'>ใบเสร็จ</button>
+  </div>
+</div>
+</div>
+

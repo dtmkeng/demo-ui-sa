@@ -1,0 +1,50 @@
+.databox{
+    position: absolute;
+    width: 50%;
+    height: 900px;
+    left: 25%;
+    right: 25%;
+    float: left;
+    background: #608099;
+    opacity: .8;
+  margin-top: 3%;
+  }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    color : #FFFFFF;
+  }
+
+  .example-container > * {
+      margin-top: 2%;
+      margin-left: 10%;
+      margin-right: 10%;
+    /* width: 100%; */
+  }
+  .title-name{
+      text-align : center;
+      color: #FFFFFF;
+      font-size: 40px;
+  }
+
+  .example-date{
+    color: #FFFFFF;
+    font-size: 18px;
+    margin-right: 5%;
+    width: 40%;
+  }
+
+  button{
+      background : #0000cd;
+      color : #FFFFFF;
+      font-size: 18px;
+  }
+  .bill-bg{
+    background: url('../img/ww.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+    margin: 0;
+}
+

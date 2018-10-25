@@ -47,6 +47,11 @@ import { ReservationhistoryComponent } from './reservationhistory/reservationhis
 // import {MatTableModule} from '@angular/material/table';
 import { SubmitComponent } from './submit/submit.component';
 import { ConfermComponent } from './conferm/conferm.component';
+
+import {PaymentComponent} from './payment/payment.component'
+import {BillComponent} from './bill/bill.component'
+import {BillService} from './service/bill.service'
+import { from } from 'rxjs';
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
 
@@ -76,7 +81,9 @@ export class XhrInterceptor implements HttpInterceptor {
     ReservationComponent,
     ReservationhistoryComponent,
     SubmitComponent,
-    ConfermComponent
+    ConfermComponent,
+    PaymentComponent,
+    BillComponent
   ],
   imports: [
     BrowserModule,
@@ -105,7 +112,8 @@ export class XhrInterceptor implements HttpInterceptor {
               AppserviceService,
               BookingequipmentService,
               ReservationserviceService,
-              SendPhotoServiceService
+              SendPhotoServiceService,
+              BillService
             ],
   bootstrap: [AppComponent]
 })

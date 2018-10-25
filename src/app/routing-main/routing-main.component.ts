@@ -19,6 +19,9 @@ import {ReservationComponent} from '../reservation/reservation.component'
 
 import {SubmitComponent}from '../submit/submit.component'
 import {ConfermComponent} from '../conferm/conferm.component'
+
+import {PaymentComponent} from '../payment/payment.component'
+import {BillComponent} from '../bill/bill.component'
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'reserlist', component: CardListResverComponent },
@@ -34,7 +37,9 @@ const routes: Routes = [
   { path:'reservation/history',component:ReservationhistoryComponent},
   { path:'reservation',component:ReservationComponent},
   { path:'send',component:SubmitComponent},
-  { path:'conferm',component:ConfermComponent}
+  { path:'conferm',component:ConfermComponent},
+  { path:'payment',component:PaymentComponent},
+  { path:'bill',component:BillComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],
