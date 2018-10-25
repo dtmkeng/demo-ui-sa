@@ -16,7 +16,7 @@ export class TextSucessComponent implements OnInit {
          this.reservatio.getReservationByReserId(data.reserid).subscribe(reser =>{
              this.reser = reser;
              this.reser.membername = reser.memberId.name
-             this.reser.time = reser.time.time
+             this.reser.time = reser.timetype.time
              console.log(reser)
          })
        

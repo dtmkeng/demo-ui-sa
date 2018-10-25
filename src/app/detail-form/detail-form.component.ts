@@ -22,7 +22,7 @@ export class DetailFormComponent implements OnInit {
             console.log(data)
             this.reser = data
             this.reser.name = data.memberId.name
-            this.reser.time = data.time.time
+            this.reser.time = data.timetype.time
       })
     })
   }

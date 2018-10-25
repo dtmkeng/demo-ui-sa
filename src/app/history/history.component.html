@@ -1,0 +1,54 @@
+<div class="bg-history">
+  <div class="history">
+      <div style="text-align:center" class="title-name">" BookingEquipment "</div>
+      <table mat-table [dataSource]="dataSource"  class="mat-elevation-z8">
+        <!-- Name Column -->
+        <ng-container matColumnDef="EquipmentName">
+          <th mat-header-cell *matHeaderCellDef> EquipmentName </th>
+          <td mat-cell *matCellDef="let element"> {{element.equipmentName}} </td>
+        </ng-container>
+
+        <!-- Type Column -->
+        <ng-container matColumnDef="EquipmentType">
+          <th mat-header-cell *matHeaderCellDef> EquipmentType </th>
+          <td mat-cell *matCellDef="let element"> {{element.equipmentType}} </td>
+        </ng-container>
+
+        <!-- Brand Column -->
+        <ng-container matColumnDef="EquipmentBrand">
+          <th mat-header-cell *matHeaderCellDef> EquipmentBrand </th>
+          <td mat-cell *matCellDef="let element"> {{element.equipmentBrand}} </td>
+        </ng-container>
+
+        <!-- DateStart Column -->
+        <ng-container matColumnDef="DateStart">
+          <th mat-header-cell *matHeaderCellDef> DateStart </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateStart | date:'longDate'}} </td>
+        </ng-container>
+
+        <!-- DateEnd Column -->
+        <ng-container matColumnDef="DateEnd">
+          <th mat-header-cell *matHeaderCellDef> DateEnd </th>
+          <td mat-cell *matCellDef="let element"> {{element.dateEnd | date:'longDate'}} </td>
+        </ng-container>
+
+        <!-- Day Column -->
+        <ng-container matColumnDef="TotalDay">
+          <th mat-header-cell *matHeaderCellDef> TotalDay </th>
+          <td mat-cell *matCellDef="let element"> {{element.totalDay}} </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="EquipmentPrice">
+          <th mat-header-cell *matHeaderCellDef> EquipmentPrice </th>
+          <td mat-cell *matCellDef="let element"> {{element.equipmentPrice}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    <br>
+    <br>
+    <button mat-button routerLink='/book' routerLinkActive='active'>กลับหน้าเช่าอุปกรณ์</button>
+  </div>
+</div>
