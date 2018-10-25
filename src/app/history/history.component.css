@@ -1,0 +1,43 @@
+.bg-history{
+  background: url('../img/311245.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 1100px;
+  margin: 0;
+  margin-top: 0;
+}
+.example-container {
+  height: 560px;
+  overflow: auto;
+}
+.history{
+  margin-top: 0;
+}
+table {
+  width: 100%;
+}
+.title-name{
+  color : #FF3399;
+  font-size: 40px;
+  font-weight: bold;
+}
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.mat-table-sticky {
+  border-top: 1px solid #e0e0e0;
+}
+
+ h1{
+  color : #FF3399;
+ }
+
+ button{
+      background : #FF3399;
+      color : #FFFFFF;
+      font-size: 18px;
+      width: 20%;
+      margin-left: 40%;
+      margin-right: 40%;
+  }

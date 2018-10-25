@@ -5,6 +5,7 @@ export class User {
   username:String;
   password:String;
 }
+
 @Injectable()
 export class ReservationService {
 public API = '//localhost:8080';

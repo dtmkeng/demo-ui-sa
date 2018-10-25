@@ -1,0 +1,36 @@
+<br>
+<br>
+<br>
+<div class = " databox ">
+  <div class="example-container">
+    <h2 class="title-name">" ระบบเช่าอุปกรณ์ถ่ายภาพ "</h2>
+
+    <mat-form-field>
+      <mat-select placeholder="ชื่ออุปกรณ์" [(ngModel)]="views.equipmentNameSelect" name = "equipmentName">
+        <mat-option *ngFor="let equipmentName of equipmentNames" [value]="equipmentName.equipmentName">
+          {{equipmentName.equipmentName}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-date">
+      <input matInput [matDatepicker]="picker" placeholder="วันที่รับ" [(ngModel)] ="views.dateStartInput">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker color="primary"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="example-date1">
+      <input matInput [matDatepicker]="picker1" placeholder="วันที่คืน" [(ngModel)] ="views.dateEndInput">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker1 color="primary1"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="จำนวนวันที่ยืม" [(ngModel)] ="views.totalDayInput">
+    </mat-form-field>
+    <br>
+    <br>
+    <button mat-button routerLink='' routerLinkActive='active' (click)="save_func()" >เช่าอุปกรณ์</button>
+    <button mat-button routerLink='/history' routerLinkActive='active'>ประวัติการเช่าอุปกรณ์</button>
+  </div>
+</div>
+
