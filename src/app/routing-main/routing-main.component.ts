@@ -22,6 +22,9 @@ import {ConfermComponent} from '../conferm/conferm.component'
 
 import {PaymentComponent} from '../payment/payment.component'
 import {BillComponent} from '../bill/bill.component'
+
+import {DetailComponent} from '../detail/detail.component'
+import {SchuduleComponent} from '../schudule/schudule.component'
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'reserlist', component: CardListResverComponent },
@@ -39,7 +42,9 @@ const routes: Routes = [
   { path:'send',component:SubmitComponent},
   { path:'conferm',component:ConfermComponent},
   { path:'payment',component:PaymentComponent},
-  { path:'bill',component:BillComponent}
+  { path:'bill',component:BillComponent},
+  { path:'schudule',component:SchuduleComponent},
+  { path:'schudule/detail',component:DetailComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],

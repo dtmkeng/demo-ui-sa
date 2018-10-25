@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {TextDialogComponent} from '../text-dialog/text-dialog.component'
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {AppService} from '../service/app.service'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,7 +12,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class LoginComponent implements OnInit {
   credentials = {username: '', password: ''};
-  constructor(private app: AppserviceService, private http: HttpClient, private router: Router,public dialog: MatDialog) {
+  constructor(private admin : AppService ,private app: AppserviceService, private http: HttpClient, private router: Router,public dialog: MatDialog) {
   }
 
 
@@ -36,5 +37,24 @@ export class LoginComponent implements OnInit {
          }
        })
       
+  }
+  LoginSubmitAdmin(){
+    this.admin.authenticate(this.credentials,()=>{
+      if(this.admin.authenticated){
+        this.router.navigate(['schudule']);
+       }else{
+        //  alert('not user')
+        const dialogRef = this.dialog.open(TextDialogComponent, {
+          width: '600px',
+      
+          data: {name: 'Incorrect login information. Please check your credentials and try again'}
+        });
+    
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+        });
+       }
+    })
+    console.log("admin")
   }
 }

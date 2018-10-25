@@ -1,0 +1,32 @@
+.example-container {
+    height: 560px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  tr.mat-footer-row {
+    font-weight: bold;
+  }
+  .title-name{
+     padding-top: 2%;
+     font-weight: bold;
+     font-size: 40px;
+     margin-bottom: 1%;
+
+  }
+  .mat-table-sticky {
+    border-top: 1px solid #e0e0e0;
+  }
+  .de-bg{
+    background: url('../img/i.jpg') no-repeat;
+    background-size: cover;
+         background-position: center;
+         font-family: stonestick;
+         font-size : 30;
+         color: white;
+         height: 760px;
+  }
+  
