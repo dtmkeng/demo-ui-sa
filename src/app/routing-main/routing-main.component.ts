@@ -12,6 +12,10 @@ import {HomeComponent} from '../home/home.component'
 
 import {BookComponent} from '../book/book.component'
 import { HistoryComponent } from '../history/history.component';
+
+import {MainreservationComponent} from '../mainreservation/mainreservation.component'
+import {ReservationhistoryComponent} from '../reservationhistory/reservationhistory.component'
+import {ReservationComponent} from '../reservation/reservation.component'
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'reserlist', component: CardListResverComponent },
@@ -22,7 +26,10 @@ const routes: Routes = [
   { path:'login' , component:LoginComponent},
   { path:'signup' , component:SignupComponent},
   { path:'book',component:BookComponent},
-  { path:'book/history',component:HistoryComponent}
+  { path:'book/history',component:HistoryComponent},
+  { path:'mainreservation',component:MainreservationComponent},
+  { path:'reservation/history',component:ReservationhistoryComponent},
+  { path:'reservation',component:ReservationComponent}
 ];
 @NgModule({
   exports: [ RouterModule ],

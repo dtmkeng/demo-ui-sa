@@ -1,0 +1,46 @@
+<div class="bg-reser">
+<div class="example-container">
+    <mat-card class="layout">
+    <h2 class="title-name">" ระบบจองสตูดิโอ/ช่างภาพ "</h2>
+  
+    <mat-form-field>
+      <mat-select placeholder="Name Studio"  [(ngModel)]="data.idstudio"  >
+        <mat-option *ngFor="let studios of studio" [value]="studios.studioId">
+          {{studios.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <br>
+    <br>
+    <mat-form-field>
+      <mat-select placeholder="Name Photograher" [(ngModel)]="data.idphotographer" >
+        <mat-option *ngFor="let photos of photo" [value]="photos.photograpId">
+          {{photos.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <br>
+  
+      <mat-form-field>
+        <input matInput  placeholder="Date" [matDatepicker]="picker" (focus)="picker.open()" [(ngModel)]="data.date" >
+      </mat-form-field>
+      <mat-datepicker #picker></mat-datepicker>
+  <br>
+    <mat-form-field>
+      <mat-select placeholder="Time" [(ngModel)]="data.typetimeid">
+        <mat-option *ngFor="let timetypes of timetype" [value]="timetypes.timetypeid">
+          {{timetypes.time}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <br>
+  
+    <button mat-button routerLink='/reservation/history' routerLinkActive='active'>ประวัติการจองสตูดิโฮ</button>
+    <button mat-button (click)="submitData()" routerLinkActive='active'>บันทึก</button>
+      </mat-card>
+  </div>
+</div>
+  

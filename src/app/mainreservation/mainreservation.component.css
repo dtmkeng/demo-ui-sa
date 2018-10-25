@@ -1,0 +1,30 @@
+.bg-reser{
+    background: url('../img/bg-ploy.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+    margin: 0;
+}
+.databox{
+    position: absolute;
+    width: 60%;
+    height: 950px;
+    left: 20%;
+    right: 20%;
+    float: left;
+    background: #333333;
+    opacity: .8;
+    color: #333333;
+  }
+.example-container{
+ text-align:center;
+ margin-top:0%;
+ padding-top: 5%;
+ margin-left:25%;
+ margin-right:25%;
+
+}
+.layout{
+margin:5%,10%,5%,10%;
+}
+

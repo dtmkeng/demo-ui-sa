@@ -39,6 +39,10 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { BookComponent } from './book/book.component';
 import { HistoryComponent } from './history/history.component';
 import { BookingequipmentService } from './bookingequipment-service/bookingequipment.service';
+import { MainreservationComponent } from './mainreservation/mainreservation.component';
+import { ReservationserviceService } from './service/reservationservice.service'
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationhistoryComponent } from './reservationhistory/reservationhistory.component';
 // import {MatTableModule} from '@angular/material/table';
 @Injectable()
 export class XhrInterceptor implements HttpInterceptor {
@@ -64,7 +68,10 @@ export class XhrInterceptor implements HttpInterceptor {
     TextDialogComponent,
     HomeComponent,
     BookComponent,
-    HistoryComponent
+    HistoryComponent,
+    MainreservationComponent,
+    ReservationComponent,
+    ReservationhistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -87,7 +94,13 @@ export class XhrInterceptor implements HttpInterceptor {
     MatButtonToggleModule
   ],
   entryComponents: [TextDialogComponent],
-  providers: [ReservationService,CancelreservationService,MatDialogModule,AppserviceService,BookingequipmentService],
+  providers: [ReservationService,
+              CancelreservationService,
+              MatDialogModule,
+              AppserviceService,
+              BookingequipmentService,
+              ReservationserviceService
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

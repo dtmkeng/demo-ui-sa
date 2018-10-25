@@ -1,0 +1,30 @@
+.example-container {
+    height: 560px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  .bg-reser{
+    background: url('../img/bg-ploy.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+    margin: 0;
+}
+  tr.mat-footer-row {
+    font-weight: bold;
+  }
+  
+  .mat-table-sticky {
+    border-top: 1px solid #e0e0e0;
+  }
+  .title-name{
+  
+    color : #BEBEBE;
+    font-size: 50px;
+    text-align: center;
+  
+   }
+  
