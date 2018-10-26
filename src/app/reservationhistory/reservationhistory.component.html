@@ -18,14 +18,14 @@
     <!-- Time Column -->
     <ng-container matColumnDef="timetype">
       <th mat-header-cell *matHeaderCellDef> Timetype </th>
-      <td mat-cell *matCellDef="let reservation"> {{reservation.timetype}} </td>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.timetype.time}} </td>
 
     </ng-container>
 
     <!-- Cost Column -->
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let reservation"> {{reservation.price | currency}} </td>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.price}} </td>
 
     </ng-container>
 
@@ -34,5 +34,5 @@
 
   </table>
   <br>
-  <button mat-button routerLink='/' routerLinkActive='active'>ย้อนกลับ</button>
+  <button mat-button routerLink='/mainreservation' routerLinkActive='active'>ย้อนกลับ</button>
 </div>

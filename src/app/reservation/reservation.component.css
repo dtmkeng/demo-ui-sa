@@ -15,7 +15,7 @@ tr.mat-footer-row {
   border-top: 1px solid #e0e0e0;
 }
 .title-name{
-  padding-top: 5%;
+  /* padding-top: 5%; */
   color : #BEBEBE;
   text-align: center;
   font-size: 50px;
@@ -27,3 +27,65 @@ tr.mat-footer-row {
   height: 1080px;
   margin: 0;
 }
+.btn-back{
+  position: relative;
+  background-color: hsl(348, 100%, 61%);
+}
+.config-password-valid{
+  /* margin-top: 3%; */
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 200px;
+  
+}
+.layout-text-ss{
+  padding-top: 5%;
+   height: auto;
+}
+.password-tltle{
+   /* margin-top: 5%; */
+   text-align: center;
+   font-size: 20px;
+}
+.example-container {
+   display: flex;
+   flex-direction: column;
+ }
+ 
+.example-container > * {
+   margin-right: 26%;
+   margin-left: 26%;
+   /* width: 100%; */
+}
+.btn-password-submit{
+   background-color: hsl(141, 71%, 48%);
+}
+.config-password-valid{
+  /* margin-top: 3%; */
+   margin-left: 20%; margin-right: 20%; height: auto;
+  }
+  .password-tltle{
+  /* text-align: center; */
+  text-align: left;
+  font-size: 20px;
+  }
+  .password-tltle-1{
+      text-align: center;
+      /* text-align: left; */
+      font-size: 20px;
+      }
+  .example-container {
+  display: flex;
+  flex-direction: column;
+  }
+  .example-container > * {
+  margin-right: 26%;
+  margin-left: 26%;
+  }
+  .btn-password-submit{
+  background-color: hsl(141, 71%, 48%);
+  }
+  .check-icon{
+  text-align: center;
+  color:hsl(204, 86%, 53%);
+  }

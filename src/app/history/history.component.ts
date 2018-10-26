@@ -30,11 +30,14 @@ export class HistoryComponent implements OnInit {
   }
 }
 export class HistoryDataSource extends DataSource<any> {
+   user : any = {
+   }
    constructor(private bookingequipmentService: BookingequipmentService) {
     super();
    }
-   connect(): Observable<History[]>{
-    return this.bookingequipmentService.getHistory();
+   connect(): Observable<any>{
+    this.user.memberIdInput  =   JSON.parse(localStorage.getItem('user')).memberId
+    return this.bookingequipmentService.getHistory(this.user.memberIdInput);
 
    }
    disconnect(){}

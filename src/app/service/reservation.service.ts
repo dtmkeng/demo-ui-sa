@@ -46,6 +46,7 @@ constructor(private http: HttpClient) {
   setUser(user : any){
      return this.http.post<User>(this.API+'/userbody',user)
   }
+ 
   
 }
  

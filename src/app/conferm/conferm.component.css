@@ -22,10 +22,13 @@
     background-image: url('../submit/kot.jpg')
 }
 .master{
+    padding-left: 20%;
     height: 720px;
-    background-image: url('../conferm/kot.jpg')
+    background-image: url('../conferm/kot.jpg');
+    
 }
 table {
+    
     width: 80%;
     
   }

@@ -1,47 +1,18 @@
 <div class="bg-reser">
-<div class="title-name">" Reservation studio/photograher "</div>
-<div class="example-container mat-elevation-z8">
-  <table mat-table [dataSource]="transactions">
-    <!-- id Column -->
-    <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> Id </th>
-        <td mat-cell *matCellDef="let transaction"> {{transaction.id}} </td>
-        <td mat-footer-cell *matFooterCellDef> TotalPrice </td>
-      </ng-container>
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.name}} </td>
-      <td mat-footer-cell *matFooterCellDef>  </td>
-    </ng-container>
-
-    <!-- Date Column -->
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.date}} </td>
-      <td mat-footer-cell *matFooterCellDef>  </td>
-    </ng-container>
-
-    <!-- Time Column -->
-    <ng-container matColumnDef="time">
-      <th mat-header-cell *matHeaderCellDef> Time </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.time}} </td>
-      <td mat-footer-cell *matFooterCellDef>  </td>
-    </ng-container>
-
-    <!-- Cost Column -->
-    <ng-container matColumnDef="cost">
-      <th mat-header-cell *matHeaderCellDef> Price </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.cost | currency}} </td>
-      <td mat-footer-cell *matFooterCellDef> {{getTotalCost() | currency}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
-  </table>
-  <br>
-  <button mat-button routerLink='/mainreservation' routerLinkActive='active'>ย้อนกลับ</button>
-
-</div>
+<div class="layout-text-ss">
+  <mat-card class="config-password-valid" >
+  <br/>
+  <div class="check-icon"><i class="far fa-check-circle fa-5x"></i></div>
+  <p class="password-tltle-1"><b>ทำรายการจองสำเร็จ</b></p>
+  <p class="password-tltle"><b>รายการจอง เลขที่: {{reser.reservationId}} </b></p>
+  <p class="password-tltle"><b>ชื่อผู้จอง: {{reser.name}}</b></p>
+  <p class="password-tltle"><b>วันที่:  {{reser.date | date : 'medium'}}</b></p>
+  <p class="password-tltle"><b>ระยะเวลา: {{reser.time}}</b></p>
+  <p class="password-tltle"><b>สตูดิโอ: {{reser.sname}}</b></p>
+  <p class="password-tltle"><b>ช่างภาพ: {{reser.pname}}</b></p>
+  <p class="password-tltle"><b>ราคา: &nbsp;{{reser.price}}  &nbsp; บาท</b></p>
+  <br/>
+  <button  routerLink="/mainreservation" mat-raised-button  class="btn-back"><b>Back</b></button>
+  </mat-card>
+  </div>
 </div>

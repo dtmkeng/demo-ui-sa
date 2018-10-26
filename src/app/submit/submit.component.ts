@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SendPhotoServiceService} from '../service/send-photo-service.service'
 import { Router } from '@angular/router';
+import {TextDialogComponent} from '../text-dialog/text-dialog.component'
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 @Component({
   selector: 'app-submit',
   templateUrl: './submit.component.html',
@@ -10,7 +12,7 @@ export class SubmitComponent implements OnInit {
   datasend:any={reservationId:"",name:"",address:"",email:"",typeDeliveryId:"",typePhotoId:"",typeSizeId:""};
   
 
-  constructor(private send : SendPhotoServiceService,private rounter : Router) { }
+  constructor(private send : SendPhotoServiceService,private rounter : Router,public dialog: MatDialog) { }
   ngOnInit() {
     console.log("dasd")
     this.send.getTypeDeliveryId().subscribe(data=>{
@@ -47,8 +49,19 @@ export class SubmitComponent implements OnInit {
  
   OnSubmit(){
     console.log(this.datasend)
+    this.datasend.memberId  =   JSON.parse(localStorage.getItem('user')).memberId
     this.send.saveSendPhoto(this.datasend).subscribe(data=>{
       console.log(data)
+      this.datasend ={reservationId:"",name:"",address:"",email:"",typeDeliveryId:"",typePhotoId:"",typeSizeId:""}
+      const dialogRef = this.dialog.open(TextDialogComponent, {
+        width: '600px',
+    
+        data: {name: 'บันทึการส่งสำเสร็จ'}
+      });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('The dialog was closed');
+      });
+  
     })
   };
 

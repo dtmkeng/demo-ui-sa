@@ -9,7 +9,8 @@ import { History } from '../history/history.component';
 })
 export class ReservationserviceService {
     public API = '//localhost:8080';
-   private serviceUrl = '//localhost:8080/reservation';
+    public serviceUrl = '//localhost:8080/reservation';
+    public serviceUrl2 = '//localhost:8080/reservationid/';
   constructor(private http: HttpClient) {
   }
   getReservetionphotograher(): Observable<any> {
@@ -39,5 +40,7 @@ export class ReservationserviceService {
   getHistory(): Observable<any>{
   return this.http.get(this.serviceUrl);
   }
-
+  getReserMem(id : String): Observable <any>{
+    return this.http.get(this.serviceUrl2+id)  
+  }
 }

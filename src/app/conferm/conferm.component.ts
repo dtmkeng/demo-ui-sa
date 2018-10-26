@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs/Observable';
+import { DataSource } from '@angular/cdk/table';
+import {SendPhotoServiceService} from '../service/send-photo-service.service'
 export interface PeriodicElement {
   sendId: String;
   
@@ -13,11 +15,7 @@ export interface PeriodicElement {
   typeSize:string;
 
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  //{sendId: "1", name: 'Hydrogen', address: "112 asd", email: "kotji@gmail.com",typeDelivery:"kerry",typePhoto:"Album",typeSize:"A4"},
-  
 
-];
 
 
 @Component({
@@ -27,14 +25,29 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ConfermComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','TypeDelivery','TypePhoto','TypeSize'];
-  dataSource = ELEMENT_DATA;
-  
-  constructor() { }
+  displayedColumns: string[] = ['sendId', 'name', 'address', 'email','TypeDelivery','TypePhoto','TypeSize'];
+  dataSource = new ReservationDataSource(this.sendPhoto);
+  memberid = JSON.parse(localStorage.getItem('user')).memberId 
+  constructor(private sendPhoto: SendPhotoServiceService) { }
 
   ngOnInit() {
+    console.log("ad")
+    this.sendPhoto.getSendPhoto(this.memberid).subscribe(data=>{
+      console.log(data)
+    })
   }
 
 
 
+}
+export class ReservationDataSource extends DataSource<any> {
+  memberid = JSON.parse(localStorage.getItem('user')).memberId 
+  constructor(private sendPhoto: SendPhotoServiceService) {
+   super();
+  }
+  connect(): Observable<any>{
+   return this.sendPhoto.getSendPhoto(this.memberid);
+
+  }
+  disconnect(){}
 }

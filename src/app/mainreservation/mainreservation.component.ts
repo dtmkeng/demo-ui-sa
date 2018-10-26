@@ -30,7 +30,11 @@ usernameStudioSelect=''
 usernamePhotoSelect=''
 usernameTimeSelect=''
 date=''
-data : any = {}
+data : any = {
+    date:'',
+    idstudio:null,
+    idphotographer:null
+}
 
  detail:any={
 
@@ -61,7 +65,7 @@ console.log(this.data)
     this.data.memberid = JSON.parse(localStorage.getItem('user')).memberId
     this.reser.saveWork(this.data).subscribe(data=>{
     console.log(data)
-    this.router.navigate(['reservation'])
+    this.router.navigate(['reservation',{data:data.reservationId}])
 })
 }
  //onDate(event){

@@ -9,7 +9,7 @@ reservationId: number;
 date: string
 timetype: string;
 }
-
+let id
 @Component({
   selector: 'app-reservationhistory',
   templateUrl: './reservationhistory.component.html',
@@ -23,7 +23,7 @@ export class ReservationhistoryComponent implements OnInit {
 
   ngOnInit() {
     console.log("adssad")
-    this.reservationService.getHistory().subscribe(data=>{
+    this.reservationService.getReserMem("2").subscribe(data=>{
       console.log(data)
     })
   }

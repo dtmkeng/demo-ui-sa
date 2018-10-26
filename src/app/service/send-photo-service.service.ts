@@ -45,7 +45,9 @@ export class SendPhotoServiceService {
   saveSendPhoto(data:any): Observable<any>{
     return this.http.post(this.API+'/datasend',data);
  }
-
+ getSendPhoto(memberid:String) :  Observable<any>{
+    return this.http.get(this.API+'/sendphoto/'+memberid);
+ }
 
 
 

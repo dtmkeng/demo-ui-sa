@@ -24,8 +24,18 @@ export class CardListResverComponent implements OnInit {
         this.reser.CheckReser(datas.reservationId).subscribe(data=>{
           if(data==null){
                console.log(datas)
-               datas.detail = 'reservation :'+ datas.photographer.detail+'  ' +datas.studio.name               
-              this.reservation.push(datas)}})}})}
+               if(datas.photographer  == null){
+                datas.detail = 'Reservation : ' + datas.studio.name + ' : '  + datas.studio.detail
+               }else if(datas.studio == null){
+                datas.detail = 'Reservation : ' + datas.photographer.name + ' : '+ datas.photographer.detail
+               }else{
+                datas.detail = 'Reservation :'+datas.photographer.name + ' : '+ datas.photographer.detail+ datas.studio.name + ' : '  + datas.studio.detail
+               }
+                           
+              this.reservation.push(datas)
+            }
+            
+            })}})}
   }
   OnSelect(data:any){
      this.router.navigate(['check',{data:data}])

@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class BookingequipmentService {
   public API = '//localhost:8080';
   private serviceUrl = '//localhost:8080/booking';
+  private serviceUrlmember = '//localhost:8080/bookingmember/';
   constructor(private http: HttpClient) { }
 
   getEquipmentName(): Observable<any> {
@@ -17,7 +18,7 @@ export class BookingequipmentService {
   getData(): Observable<any> {
     return this.http.get(this.API + '/bookings');
   }
-  getHistory(): Observable<History[]>{
-    return this.http.get<History[]>(this.serviceUrl);
+  getHistory(memberId:String): Observable<any>{
+    return this.http.get(this.serviceUrlmember+memberId);
   }
 }
