@@ -1,3 +1,4 @@
+
 .title-name{
     padding-top: 4%;
     text-align : center;
@@ -22,7 +23,6 @@ table{
     width: 100%;
 }
 .bill-bg{
-    background: url('../img/ww.jpg');
     background-size: cover;
     background-position: center;
     height: 1080px;

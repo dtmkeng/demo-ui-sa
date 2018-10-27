@@ -45,6 +45,7 @@ save(){
     console.log(this.data)
       this.bill.saveBill(this.data).subscribe(data=>{
           console.log(data)
+          console.log("save bill")
       })
   };
 }

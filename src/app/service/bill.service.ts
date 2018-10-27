@@ -38,6 +38,9 @@ import { Observable } from 'rxjs';
    getBookALL():Observable<any>{
      return this.http.get(this.API+'/Booking')
    }
+   getBill():Observable<any>{
+     return this.http.get(this.API+'/Bill')
+   }
 
    saveBill(data:any): Observable<any>{
      return this.http.post(this.API+'/bills',data);
