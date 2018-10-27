@@ -1,51 +1,50 @@
-
 <div class="de-bg">
-<div  class="title-name">" History Workschudulephotograher "</div>
-<div class="example-container mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
-     <!-- workschuduleid Column --> 
-    <ng-container matColumnDef="workschuduleid">
-      <th mat-header-cell *matHeaderCellDef> Workschuduleid </th>
-      <td mat-cell *matCellDef="let element"> {{element.workschuduleid}} </td>
-
-    </ng-container>
-
-     <!-- date Column  -->
-    <ng-container matColumnDef="date">
-      <th mat-header-cell *matHeaderCellDef> Date </th>
-      <td mat-cell *matCellDef="let element"> {{element.date | date:'longDate'}} </td>
-
-    </ng-container>
-
-    <!-- &lt;!&ndash; location Column &ndash;&gt; -->
-    <ng-container matColumnDef="location">
-      <th mat-header-cell *matHeaderCellDef> Location </th>
-      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
-
-    </ng-container>
-
-    <!-- &lt;!&ndash; photographer Column &ndash;&gt; -->
-    <ng-container matColumnDef="photographer">
-      <th mat-header-cell *matHeaderCellDef> Photographer </th>
-      <td mat-cell *matCellDef="let element"> {{element.photographer.name}} </td>
-
-    </ng-container>
-
-    <!-- &lt;!&ndash; timetyp Column &ndash;&gt; -->
-    <ng-container matColumnDef="timetype">
-      <th mat-header-cell *matHeaderCellDef> Timetype </th>
-      <td mat-cell *matCellDef="let element"> {{element.timetype.time}} </td>
-
-    </ng-container>
-
-
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-  </table>
-  <br>
-  <button mat-button routerLink='/schudule' routerLinkActive='active'>ย้อนกลับ</button>
-
-</div>
-</div>
+  <div style="text-align:center" class="title-name">" History Workschudulephotograher "</div>
+  <div class="example-container mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+       <!-- workschuduleid Column --> 
+      <ng-container matColumnDef="workschuduleid">
+        <th mat-header-cell *matHeaderCellDef> Workschuduleid </th>
+        <td mat-cell *matCellDef="let element"> {{element.workschuduleid}} </td>
+  
+      </ng-container>
+  
+       <!-- date Column  -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.date | date:'longDate'}} </td>
+  
+      </ng-container>
+  
+      <!-- &lt;!&ndash; location Column &ndash;&gt; -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef> Location </th>
+        <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+  
+      </ng-container>
+  
+      <!-- &lt;!&ndash; photographer Column &ndash;&gt; -->
+      <ng-container matColumnDef="photographer">
+        <th mat-header-cell *matHeaderCellDef> Photographer </th>
+        <td mat-cell *matCellDef="let element"> {{element.photographer.name}} </td>
+  
+      </ng-container>
+  
+      <!-- &lt;!&ndash; timetyp Column &ndash;&gt; -->
+      <ng-container matColumnDef="timetype">
+        <th mat-header-cell *matHeaderCellDef> Timetype </th>
+        <td mat-cell *matCellDef="let element"> {{element.timetype.time}} </td>
+  
+      </ng-container>
+  
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+    </table>
+    <br>
+    <button mat-button routerLink='/schudule' routerLinkActive='active'>ย้อนกลับ</button>
+  
+  </div>
+  </div>
